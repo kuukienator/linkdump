@@ -88,9 +88,22 @@ router.get('/api/geturltitle/:link',function(req,res){
             res.status(400).json({error:error});
         }
     });
+});
 
+router.post('/api/geturltitle',function(req,res){
+    console.log("requesting (POST) "+req.body.link);
+
+    request(req.body.link, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+
+            res.status(200).json({title: body.match("<title>(.*?)</title>")[1]});
+        }else{
+            res.status(400).json({error:error});
+        }
+    });
 
 });
+
 router.get('/*',function(req,res){
     res.json({message:"Welcome to link_dump"});
 });
