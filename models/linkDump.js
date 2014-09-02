@@ -5,7 +5,7 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var LinkDumpSchema   = new Schema({
-    links: [String]
+    links: []
 });
 
 module.exports = mongoose.model('LinkDump', LinkDumpSchema);
