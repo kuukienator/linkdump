@@ -51,29 +51,32 @@ router.route('/api/linkdump')
         linkDump.save(function(err){
             if(err){
                 res.status(500).send(err);
+            }else{
+                res.status(200).json({id:linkDump.id});
             }
-            res.status(200).json({id:linkDump.id});
+
         });
     })
     .get(function(req,res){
-        LinkDump.find(function(err,linkDmps){
-            if(err){
-                res.send(err);
+        LinkDump.find(function(err,linkDumps){
+            if(!err){
+                res.status(200).json(linkDumps);
+
+            }else{
+                res.status(500).send(err);
             }
 
-            if(linkDmps){
-                res.json(linkDmps);
-            }
+
         })
     });
 router.get('/api/linkdump/:id',function(req,res){
     LinkDump.findOne({ '_id': req.params.id }, function (err, linkDump) {
-        if (err){
-            res.send(err);
+        if (!err){
+            res.status(200).json(linkDump);
+        }else{
+            res.status(500).json(err);
         }
-        if(linkDump){
-            res.json(linkDump);
-        }
+
 
     });
 });
