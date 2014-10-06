@@ -1,3 +1,4 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+linkdump
+========
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+NodeJS service to store and retrieve a list of links
