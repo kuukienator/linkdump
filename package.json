@@ -1,6 +1,8 @@
 {
   "name": "link-dump",
   "version": "0.0.1",
+  "description" : "NodeJS service to store and retrieve a list of links",
+  "author": "Emmanuel Meinike <emathegreat@gmail.com>",
   "private": true,
   "main": "app.js",
   "scripts": {
@@ -11,5 +13,6 @@
     "express": "~4.8.5",
     "body-parser": "~1.6.6",
     "request": "~2.40.0"
-  }
+  },
+  "license": "MIT"
 }
